@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Cookie Comic Creator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-title" content="Comic Creator">
+        <meta name="description" content="Create comics with Cookie Run game characters and send them to your friends!">
+        <meta name="keywords" content="CookieRun, OvenBreak, Kingdom, manga, maker, syrupyy">
+        <meta property="og:title" content="Cookie Run Comic Creator">
+        <meta property="og:type" content="article">
+        <meta property="og:description" content="Create comics with Cookie Run game characters and send them to your friends!">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:locale:alternate" content="es_LA">
+        <meta property="og:locale:alternate" content="ko_KR">
+        <link rel="alternate" hreflang="x-default" href="index.html">
+        <link rel="alternate" hreflang="en-US" href="index.html">
+        <link rel="alternate" hreflang="es-LA" href="es.html">
+        <link rel="alternate" hreflang="ko-KR" href="ko.html">
+        <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/themes.css">
+    </head>
+    <body>
+        <h1>Cookie Comic Creator</h1>
+        <p>Create comics with Cookie Run game characters and send them to your friends!</p>
+        <noscript>JavaScript must be enabled to use this website.</noscript>
+        <div class="creator">
+            <div class="column top-buttons">
+                <button id="import">Import</button>
+                <button id="export">Export</button>
+                <button id="clear">Clear</button>
+            </div>
+            <div class="column top-buttons right">
+                <span id="share-output" class="none">
+                    <a id="share-link"></a>
+                    <a id="tweet-link" target="_blank"><button><span class="twitter"></span>Tweet</button></a>
+                    <a id="facebook-link" target="_blank"><button><span class="facebook"></span>Share</button></a>
+                    <a id="tumblr-link" target="_blank"><button><span class="tumblr"></span>Post</button></a>
+                    <button id="share-external"><span class="share-icon"></span></button>
+                </span>
+                <button id="share">Share</button>
+            </div><br>
+            <span class="center">
+                <canvas id="comic" width="1410" height="384"></canvas>
+            </span>
+            <div class="creator-buttons flex">
+                <div class="left-buttons flex">
+                    <button id="cookys" class="openable" title="Cookie Sprites"></button>
+                    <button id="pets" class="openable" title="Pet Sprites"></button>
+                    <button id="props" class="openable" title="Props"></button>
+                    <button id="textboxes" class="openable" title="Textboxes"></button>
+                    <button id="backgrounds" class="openable" title="Backgrounds"></button>
+                    <input id="title" type="text" placeholder="Name" maxlength="50">
+                    <input type="range" min="-180" max="180" value="0" id="rotate" title="Rotate" disabled>
+                </div>
+                <div class="right-buttons">
+                    <div id="controls" class="column">
+                        <input type="range" min="0" max="100" value="50" id="resize" title="Resize" disabled>
+                        <button id="flip-image" disabled>Flip Image</button>
+                    </div>
+                    <div class="column">
+                        <button id="undo" disabled>Undo</button>
+                        <button id="redo" disabled>Redo</button>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <button id="add-row">+ Row</button>
+                            <button id="remove-row" disabled>- Row</button>
+                        </div>
+                        <div class="column thick">
+                            <button id="add-column">+ Column</button>
+                            <button id="remove-column">- Column</button>
+                        </div>
+                        <button id="copy-panel">Copy Panel</button><button id="save-image">Save Image</button>
+                    </div><br>
+                    <span id="tabs" class="none"><button class="tab" id="ovenbreak">OvenBreak/LINE</button><button class="tab unopened" id="kingdom">Kingdom</button></span>
+                    <button id="back" class="none">Back</button>
+                </div>
+            </div>
+            <div id="options" class="none">
+                <button id="custom">+ Custom Sprite</button>
+                <style id="search-style"></style>
+                <select id="sort">
+                    <option selected disabled hidden value="recent">Sort</option>
+                    <option value="a-z">A-Z</option>
+                    <option value="z-a">Z-A</option>
+                    <option value="release" id="release">Release</option>
+                    <option value="release-new" id="release-new">Release (new)</option>
+                    <option value="recent">Recently used</option>
+                </select><input id="search" type="text" placeholder="Search">
+            </div>
+            <div id="images"></div>
+            <canvas id="text" class="none" width="0" height="0"></canvas>
+        </div>
+        <div class="theme-selector-container">
+            <span class="theme-selector">Change theme
+                <span class="theme" name="classic" title="Classic"><span class="theme-label">Classic</span></span>
+                <span class="theme" name="kingdom" title="Kingdom"><span class="theme-label">Kingdom</span></span>
+                <span class="theme" name="kingdom dark" title="Kingdom (Dark)"><span class="theme-label">Kingdom (Dark)</span></span>
+                <span class="theme" name="black" title="Black"><span class="theme-label">Black</span></span>
+            </span>
+        </div>
+        <script src="assets/index.js"></script>
+        <script src="assets/creator.js"></script>
+        <p><a href="index.html">English</a> &bull; <a href="es.html">Español</a> &bull; <a href="ko.html">한국어</a></p>
+        <p>Share your creations with #cookiecomiccreator on <a href="https://twitter.com/hashtag/cookiecomiccreator">Twitter</a>, <a href="https://www.instagram.com/explore/tags/cookiecomiccreator/">Instagram</a> or <a href="https://www.tiktok.com/tag/cookiecomiccreator">TikTok</a>!<br>Tumblr: <a href="https://www.tumblr.com/tagged/cookie%20comic%20creator">#cookie comic creator</a></p>
+        <p>Cookie Comic Creator is a fan project unaffiliated with Devsisters.<br><a href="https://game.devsisters.com/en/cookierun/">Please support them on the Cookie Run website!</a></p>
+        <p>This site uses the CookieRun font by Devsisters. <a href="https://www.cookierunfont.com/static/download/License_ko_en.pdf" target="_blank">(license)</a></p>
+        <p>made by syrupyy &#129412; <a href="https://syrupyy.tumblr.com/">tumblr</a><br>if you have any suggestions/find a bug, message me or send an ask!<br><a href="https://twitter.com/syrupyy_pluto">twitter: @syrupyy_pluto</a> &bull; <a href="https://github.com/syrupyy/cookiecomiccreator">github (mit license)</a></p>
+    </body>
+</html>
